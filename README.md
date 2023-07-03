@@ -1,5 +1,5 @@
 # projet_python
-Le projet gestion de contact System est écrit en Python.
+Le projet gestion de contact est écrit en Python.
 Le fichier projet contient un script python (index.py). 
 Il s'agit d'un projet basé sur une interface graphique simple. 
 Il contient toutes les fonctions requises, notamment l'ajout, l'affichage, la suppression et la mise à jour des listes de contacts.
