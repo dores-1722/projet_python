@@ -166,14 +166,12 @@ def AddNewWindow():
     if 'UpdateWindow' in globals():
         UpdateWindow.destroy()
     
-    #===================FRAMES==============================
     FormTitle = Frame(NewWindow)
     FormTitle.pack(side=TOP)
     ContactForm = Frame(NewWindow)
     ContactForm.pack(side=TOP, pady=10)
 
     
-    #===================LABELS==============================
     lbl_title = Label(FormTitle, text="Créer un nouveau contact", font=('arial', 16), bg="#66ff66",  width = 300)
     lbl_title.pack(fill=X)
     lbl_firstname = Label(ContactForm, text="Prénom", font=('arial', 14), bd=5)
@@ -185,7 +183,6 @@ def AddNewWindow():
     lbl_contact = Label(ContactForm, text="Numero de téléphone", font=('arial', 14), bd=5)
     lbl_contact.grid(row=3, sticky=W)
 
-    #===================ENTRY===============================
     firstname = Entry(ContactForm, textvariable=prenom, font=('arial', 14))
     firstname.grid(row=0, column=1)
     lastname = Entry(ContactForm, textvariable=nom, font=('arial', 14))
@@ -196,15 +193,12 @@ def AddNewWindow():
     contact.grid(row=3, column=1)
     
 
-    #==================BUTTONS==============================
     btn_addcon = Button(ContactForm, text="Enregistrer", width=50, command=SubmitData)
     btn_addcon.grid(row=4, columnspan=2, pady=10)
 
 
 
 
-    
-#============================FRAMES======================================
 Top = Frame(root, width=500, bd=1, relief=SOLID)
 Top.pack(side=TOP)
 Mid = Frame(root, width=500,  bg="#6666ff")
@@ -217,19 +211,16 @@ MidRight = Frame(Mid, width=100)
 MidRight.pack(side=RIGHT, pady=10)
 TableMargin = Frame(root, width=500)
 TableMargin.pack(side=TOP)
-#============================LABELS======================================
+
 lbl_title = Label(Top, text="Gestion des contacts", font=('arial', 16), width=500)
 lbl_title.pack(fill=X)
 
-#============================ENTRY=======================================
-
-#============================BUTTONS=====================================
 btn_add = Button(MidLeft, text="+ Créer", bg="#66ff66", command=AddNewWindow)
 btn_add.pack()
 btn_delete = Button(MidRight, text="Supprimer", bg="red", command=DeleteData)
 btn_delete.pack(side=RIGHT)
 
-#============================TABLES======================================
+
 scrollbarx = Scrollbar(TableMargin, orient=HORIZONTAL)
 scrollbary = Scrollbar(TableMargin, orient=VERTICAL)
 tree = ttk.Treeview(TableMargin, columns=("ContactID", "Prénom", "Nom", "Adresse", "Numéro de tél"), height=400, selectmode="extended", yscrollcommand=scrollbary.set, xscrollcommand=scrollbarx.set)
@@ -251,7 +242,6 @@ tree.column('#5', stretch=NO, minwidth=0, width=120)
 tree.pack()
 tree.bind('<Double-Button-1>', OnSelected)
 
-#============================INITIALIZATION==============================
 if __name__ == '__main__':
     Database()
     root.mainloop()
